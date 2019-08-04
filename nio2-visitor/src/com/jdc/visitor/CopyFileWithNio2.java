@@ -14,16 +14,12 @@ public class CopyFileWithNio2 implements Copyer<Path>{
 		LocalTime start = LocalTime.now();
 		
 		try {
-			
 			Files.copy(from, to);
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		
-		
 		LocalTime end = LocalTime.now();
-		
 		return diff(start, end);
 	}
 

@@ -28,7 +28,6 @@ public class CopyFileWithIO implements Copyer<File>{
 		
 		
 		LocalTime end = LocalTime.now();
-		
 		return diff(start, end);
 	}
 
