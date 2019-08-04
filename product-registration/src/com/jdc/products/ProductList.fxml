@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="780.0" prefWidth="1180.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.products.ProductList">
+	<children>
+		<HBox alignment="CENTER" style="-fx-background-color: purple;">
+			<children>
+				<Label style="-fx-font-size: 24; -fx-text-fill: white;" text="Product List" />
+			</children>
+			<padding>
+				<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+			</padding>
+		</HBox>
+		<HBox spacing="20.0">
+			<children>
+				<HBox alignment="CENTER_LEFT" spacing="10.0">
+					<children>
+						<Label text="Category" />
+						<ComboBox fx:id="category" prefWidth="150.0" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="10.0" spacing="10.0">
+					<children>
+						<Label text="Name" />
+						<TextField fx:id="name" />
+					</children>
+				</HBox>
+				<Button mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="120.0" text="SEARCH" />
+				<Button layoutX="500.0" layoutY="30.0" mnemonicParsing="false" onAction="#addNew" prefHeight="27.0" prefWidth="120.0" text="ADD NEW" />
+            <Button layoutX="640.0" layoutY="30.0" mnemonicParsing="false" onAction="#upload" prefHeight="27.0" prefWidth="120.0" text="UPLOAD" />
+			</children>
+			<padding>
+				<Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+			</padding>
+		</HBox>
+		<TableView fx:id="table" VBox.vgrow="ALWAYS">
+			<columns>
+				<TableColumn prefWidth="196" text="Category">
+					<cellValueFactory>
+						<PropertyValueFactory property="category" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="241" text="Name">
+					<cellValueFactory>
+						<PropertyValueFactory property="name" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="164.5" text="Size">
+					<cellValueFactory>
+						<PropertyValueFactory property="size" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="164.5" text="Price">
+					<cellValueFactory>
+						<PropertyValueFactory property="price" />
+					</cellValueFactory>
+				</TableColumn>
+				<TableColumn prefWidth="408.5" text="Remark">
+					<cellValueFactory>
+						<PropertyValueFactory property="remark" />
+					</cellValueFactory>
+				</TableColumn>
+			</columns>
+		</TableView>
+	</children>
+</VBox>

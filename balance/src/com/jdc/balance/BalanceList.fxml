@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity"
+	minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0"
+	prefWidth="918.0" xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.jdc.balance.BalanceList">
+	<children>
+		<HBox>
+			<children>
+				<Label style="-fx-font-size: 18;" text="Balance" />
+			</children>
+			<padding>
+				<Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+			</padding>
+		</HBox>
+		<HBox spacing="10.0">
+			<children>
+				<ComboBox fx:id="type" prefWidth="150.0" promptText="Type" />
+				<DatePicker fx:id="date" promptText="Date" />
+				<TextField fx:id="amount" prefHeight="27.0"
+					prefWidth="136.0" promptText="Amount" />
+				<TextField fx:id="reason" promptText="Reason"
+					HBox.hgrow="ALWAYS" />
+				<Button mnemonicParsing="false" onAction="#add"
+					text="ADD NEW" />
+			</children>
+			<padding>
+				<Insets bottom="15.0" left="15.0" right="15.0" />
+			</padding>
+		</HBox>
+		<VBox VBox.vgrow="ALWAYS">
+			<children>
+				<TableView fx:id="table" VBox.vgrow="ALWAYS">
+					<columns>
+						<TableColumn prefWidth="153.0" text="Type" >
+							<cellValueFactory>
+								<PropertyValueFactory property="type" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="196.0" text="Date"  >
+							<cellValueFactory>
+								<PropertyValueFactory property="date" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="155.0" text="Amount"  >
+							<cellValueFactory>
+								<PropertyValueFactory property="amount" />
+							</cellValueFactory>
+						</TableColumn>
+						<TableColumn prefWidth="376.0" text="Reason"  >
+							<cellValueFactory>
+								<PropertyValueFactory property="reason" />
+							</cellValueFactory>
+						</TableColumn>
+					</columns>
+				</TableView>
+			</children>
+			<padding>
+				<Insets bottom="15.0" left="15.0" right="15.0" />
+			</padding>
+		</VBox>
+	</children>
+</VBox>

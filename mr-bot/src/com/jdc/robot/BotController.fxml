@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.robot.BotController">
+   <children>
+      <HBox style="-fx-alignment: center; -fx-padding: 20; -fx-background-color: silver;">
+         <children>
+            <Label style="-fx-font-size: 24;" text="Mr Bot" />
+         </children>
+      </HBox>
+      <HBox VBox.vgrow="ALWAYS">
+         <children>
+            <VBox style="-fx-alignment: center; -fx-padding: 20; -fx-spacing: 20;">
+               <children>
+                  <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@robot.png" />
+                     </image>
+                  </ImageView>
+                  <Label style="-fx-font-size: 18;" text="Please Teach Me!" />
+               </children>
+            </VBox>
+            <VBox style="-fx-padding: 10; -fx-spacing: 10;" HBox.hgrow="ALWAYS">
+               <children>
+                  <ListView fx:id="output" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <HBox style="-fx-spacing: 10;">
+                     <children>
+                        <TextField fx:id="input" HBox.hgrow="ALWAYS" />
+                        <Button mnemonicParsing="false" onAction="#talk" text="TALK" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
