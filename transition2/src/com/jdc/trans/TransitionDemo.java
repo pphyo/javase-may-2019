@@ -34,12 +34,18 @@ public class TransitionDemo implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 
 		node.setOnMouseClicked(event -> {
-			RadioButton selected = (RadioButton) checks.getSelectedToggle();
-			
+			if(null != trans && trans.getStatus() == Status.RUNNING) {
+				trans.stop();
+			}
+		});
+		
+		checks.selectedToggleProperty().addListener((a,b,c) -> {
+
 			if(null != trans && trans.getStatus() == Status.RUNNING) {
 				trans.stop();
 			}
 			
+			RadioButton selected = (RadioButton) checks.getSelectedToggle();
 			if(selected.getText().equals("Sequential")) {
 				trans = getSequentialAnimation();
 			} else {
