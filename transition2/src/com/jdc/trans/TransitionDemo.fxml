@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jdc.trans.TransitionDemo">
+   <children>
+      <Label layoutX="196.0" layoutY="40.0" text="Transition Demo 2">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="node" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="120.0" layoutX="240.0" layoutY="140.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+      <RadioButton layoutX="217.0" layoutY="331.0" mnemonicParsing="false" selected="true" text="Sequential">
+         <toggleGroup>
+            <ToggleGroup fx:id="checks" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="315.0" layoutY="331.0" mnemonicParsing="false" text="Parallel" toggleGroup="$checks" />
+   </children>
+</AnchorPane>

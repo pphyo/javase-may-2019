@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="com.jdc.trans.TransitionDemo">
+   <children>
+      <Label layoutX="199.0" layoutY="39.0" text="Transition Demo">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="node" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="120.0" layoutX="234.0" layoutY="159.0" stroke="BLACK" strokeType="INSIDE" width="120.0" />
+   </children>
+</AnchorPane>

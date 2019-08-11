@@ -1,0 +1,24 @@
+.mainFrame {
+	-fx-pref-width: 1080px;
+	-fx-pref-height: 680px;
+}
+
+.titleBar {
+	-fx-pref-height: 60px;
+	-fx-alignment: center-left;
+	-fx-padding: 20px;
+}
+
+.titleBar Label {
+	-fx-font-size: 18px;
+}
+
+.iconBar {
+	-fx-alignment: center-right;
+	-fx-spacing: 20;
+}
+
+.iconBox {
+	-fx-pref-width: 30px;
+	-fx-alignment: center;
+}
