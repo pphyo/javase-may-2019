@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.controller.PosHome">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="mainFrame" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.controller.PosHome">
    <stylesheets>
       <URL value="@layout.css" />
       <URL value="@color.css" />
@@ -34,13 +34,9 @@
          </children>
          <styleClass>
             <String fx:value="titleBar" />
-            <String fx:value="s-light" />
+            <String fx:value="p-color" />
          </styleClass>
       </HBox>
       <StackPane fx:id="content" VBox.vgrow="ALWAYS" />
    </children>
-   <styleClass>
-      <String fx:value="mainFrame" />
-      <String fx:value="s-dark" />
-   </styleClass>
 </VBox>
