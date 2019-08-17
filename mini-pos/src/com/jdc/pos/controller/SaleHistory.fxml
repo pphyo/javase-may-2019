@@ -1,8 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.controller.SaleHistory">
+   <stylesheets>
+      <URL value="@color.css" />
+      <URL value="@layout.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="contentView" />
+      <String fx:value="pad20" />
+      <String fx:value="space20" />
+   </styleClass>
+   <children>
+      <HBox styleClass="space10">
+         <children>
+            <ComboBox fx:id="category" prefWidth="150.0" promptText="Category" />
+            <TextField fx:id="item" promptText="Item" />
+            <DatePicker fx:id="dateFrom" promptText="Date From" />
+            <DatePicker fx:id="dateTo" promptText="Date To" />
+            <Button mnemonicParsing="false" onAction="#clear" styleClass="p-light" text="CLEAR" />
+         </children>
+      </HBox>
+      <TableView fx:id="table" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+        <columns>
+          <TableColumn prefWidth="162.0" text="Category" />
+          <TableColumn prefWidth="164.0" text="Item" />
+            <TableColumn prefWidth="164.0" text="Sale Date" />
+            <TableColumn maxWidth="160.0" minWidth="160.0" prefWidth="160.0" styleClass="alignRight" text="Unit Price" />
+            <TableColumn maxWidth="160.0" minWidth="160.0" prefWidth="160.0" styleClass="alignRight" text="Quentity" />
+            <TableColumn maxWidth="160.0" minWidth="160.0" prefWidth="160.0" styleClass="alignRight" text="Total" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</VBox>

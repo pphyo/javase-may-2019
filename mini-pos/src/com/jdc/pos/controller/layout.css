@@ -22,3 +22,51 @@
 	-fx-pref-width: 30px;
 	-fx-alignment: center;
 }
+
+.contentView {
+	-fx-pref-width: 1080px;
+	-fx-pref-height: 617px;
+	-fx-max-width: 5000px;
+	-fx-max-height: 5000px;
+}
+
+.contentHeight {
+	-fx-pref-height: 537px;
+	-fx-max-height: 5000px;
+}
+
+.pad20 {
+	-fx-padding: 20;
+}
+
+.space20 {
+	-fx-spacing: 20;
+}
+
+.space10 {
+	-fx-spacing: 10;
+}
+
+.searchBar {
+	-fx-pref-height: 30px;
+	-fx-min-height: 30px;
+	-fx-alignment: center-left;
+}
+
+.alignRight {
+	-fx-alignment: center-right;
+}
+
+.wid420 {
+	-fx-pref-width: 420px;
+}
+
+.fs18 {
+	-fx-font-size: 18px;
+}
+
+.iconButton {
+	-fx-padding: 10;
+	-fx-spacing: 5;
+	-fx-alignment: center;
+}
