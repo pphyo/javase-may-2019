@@ -1,8 +1,13 @@
 package com.jdc.pos.controller;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.ResourceBundle;
+
+import com.jdc.pos.model.ItemModel;
+import com.jdc.pos.model.entity.Item;
 
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -11,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.shape.SVGPath;
+import javafx.stage.FileChooser;
 
 public class PosHome implements Initializable{
 	
@@ -21,6 +27,32 @@ public class PosHome implements Initializable{
 	
 	public void upload() {
 		
+		try {
+			
+			// open file chooser
+			FileChooser fc = new FileChooser();
+			fc.setTitle("Select Upload File");
+			
+			File file = fc.showOpenDialog(icon.getScene().getWindow());
+			
+			if(null != file) {
+				
+				// change file to path
+				// get streams from path
+				// convert all lines to Item Object
+				// add to Item Model
+				Files.lines(file.toPath())
+					.map(Item::new)
+					.forEach(ItemModel.getInstance()::add);
+				
+				// show pos view
+				loadPosView();
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	public void logout() {
@@ -28,12 +60,11 @@ public class PosHome implements Initializable{
 	}
 	
 	public void showReport() {
-		
+		// TODO
 	}
 	
 	public void switchView() {
 		
-		content.getChildren().clear();
 		Parent view = null;
 		
 		if(icon.getId().equals(Icon.History.name())) {
@@ -46,17 +77,22 @@ public class PosHome implements Initializable{
 			view = getView("PosView");
 		}
 		
+		content.getChildren().clear();
 		content.getChildren().add(view);
 	}
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-
-		icon.setId(Icon.History.name());
-		icon.setContent(Icon.History.content);
-		content.getChildren().add(getView("PosView"));
+		loadPosView();
 	}
 	
+	private void loadPosView() {
+		icon.setId(Icon.History.name());
+		icon.setContent(Icon.History.content);
+		content.getChildren().clear();
+		content.getChildren().add(getView("PosView"));
+	}
+
 	private Parent getView(String viewName) {
 		try {
 			return FXMLLoader.load(getClass().getResource(viewName.concat(".fxml")));

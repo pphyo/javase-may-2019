@@ -1,25 +1,25 @@
 .p-color {
-	-fx-background-color: #8c9eff;
+	-fx-background-color: #c5e1a5;
 }
 
 .p-light {
-	-fx-background-color: #c0cfff;
+	-fx-background-color: #f8ffd7;
 }
 
 .p-dark {
-	-fx-background-color: #5870cb;
+	-fx-background-color: #94af76;
 }
 
 .s-color {
-	-fx-background-color: #303f9f;
+	-fx-background-color: #2e7d32;
 }
 
 .s-light {
-	-fx-background-color: #666ad1;
+	-fx-background-color: #60ad5e;
 }
 
 .s-dark {
-	-fx-background-color: #001970;
+	-fx-background-color: #005005;
 }
 
 .white {
