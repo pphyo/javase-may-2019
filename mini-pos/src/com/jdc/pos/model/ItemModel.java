@@ -1,9 +1,12 @@
 package com.jdc.pos.model;
 
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 import com.jdc.pos.model.entity.Item;
@@ -46,6 +49,31 @@ public class ItemModel {
 				.distinct()
 				.sorted()
 				.collect(Collectors.toList());
+	}
+
+	public List<Item> search(String category, String item) {
+		
+		Predicate<Item> pred = a -> true;
+		
+		if(null != category) {
+			pred = pred.and(a -> a.getCategory().equals(category));
+		}
+		
+		if(null != item  && !item.isEmpty()) {
+			pred = pred.and(a -> a.getName().toLowerCase()
+					.startsWith(item.toLowerCase()));
+		}
+		
+		return items.stream().filter(pred).collect(Collectors.toList());
+	}
+
+	public void save() {
+
+		try (ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE))){
+			out.writeObject(items);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 }

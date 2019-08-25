@@ -1,6 +1,7 @@
 package com.jdc.pos;
 
 import com.jdc.pos.controller.PosHome;
+import com.jdc.pos.model.ItemModel;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,18 @@ public class PosMain extends Application{
 		stage.setScene(new Scene(root));
 		stage.show();
 	}
+	
+	
+
+	@Override
+	public void stop() throws Exception {
+		
+		ItemModel.getInstance().save();
+		
+		super.stop();
+	}
+
+
 
 	public static void main(String[] args) {
 		launch(args);
