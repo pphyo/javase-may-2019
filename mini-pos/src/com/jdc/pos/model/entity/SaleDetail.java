@@ -1,13 +1,24 @@
 package com.jdc.pos.model.entity;
 
-public class SaleDetail {
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public class SaleDetail implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	private int id;
 	private String category;
 	private String item;
 	private int price;
 	private int count;
+
+	private Sale sale;
 	
+	public LocalDate getSaleDate() {
+		return sale.getSaleDate();
+	}
+
 	public int getTotal() {
 		return price * count;
 	}
@@ -50,6 +61,14 @@ public class SaleDetail {
 
 	public void setCount(int count) {
 		this.count = count;
+	}
+
+	public Sale getSale() {
+		return sale;
+	}
+
+	public void setSale(Sale sale) {
+		this.sale = sale;
 	}
 
 }

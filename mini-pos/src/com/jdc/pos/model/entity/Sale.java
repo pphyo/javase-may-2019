@@ -1,11 +1,14 @@
 package com.jdc.pos.model.entity;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sale {
+public class Sale implements Serializable{
+
+	private static final long serialVersionUID = 1L;
 
 	private int id;
 	private LocalDate saleDate;
@@ -46,6 +49,7 @@ public class Sale {
 
 	public void setDetails(List<SaleDetail> details) {
 		this.details = details;
+		details.forEach(d -> d.setSale(this));
 	}
 
 }

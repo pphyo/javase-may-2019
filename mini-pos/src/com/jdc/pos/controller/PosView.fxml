@@ -9,19 +9,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity"
-	minHeight="-Infinity" minWidth="-Infinity"
-	xmlns="http://javafx.com/javafx/8.0.171"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="com.jdc.pos.controller.PosView">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.controller.PosView">
 	<stylesheets>
 		<URL value="@layout.css" />
 		<URL value="@color.css" />
@@ -32,18 +28,15 @@
 		<String fx:value="space20" />
 	</styleClass>
 	<children>
-		<TitledPane collapsible="false" styleClass="contentHeight"
-			text="Select Items" HBox.hgrow="ALWAYS">
+		<TitledPane collapsible="false" styleClass="contentHeight" text="Select Items" HBox.hgrow="ALWAYS">
 			<content>
 				<VBox prefHeight="200.0" prefWidth="100.0" styleClass="space10">
 					<children>
 						<HBox>
 							<children>
-								<ComboBox fx:id="category" prefWidth="150.0"
-									promptText="Category" />
+								<ComboBox fx:id="category" prefWidth="150.0" promptText="Category" />
 								<TextField fx:id="item" promptText="Item" />
-								<Button mnemonicParsing="false" onAction="#clearSearch"
-									text="CLEAR">
+								<Button mnemonicParsing="false" onAction="#clearSearch" text="CLEAR">
 									<styleClass>
 										<String fx:value="s-dark" />
 										<String fx:value="white" />
@@ -55,21 +48,19 @@
 								<String fx:value="searchBar" />
 							</styleClass>
 						</HBox>
-						<TableView fx:id="items" prefHeight="200.0"
-							prefWidth="200.0" VBox.vgrow="ALWAYS">
+						<TableView fx:id="items" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
 							<columns>
-								<TableColumn prefWidth="155.0" text="Category" >
+								<TableColumn prefWidth="155.0" text="Category">
 									<cellValueFactory>
 										<PropertyValueFactory property="category" />
 									</cellValueFactory>
 								</TableColumn>
-								<TableColumn prefWidth="203.0" text="Item" >
+								<TableColumn prefWidth="203.0" text="Item">
 									<cellValueFactory>
 										<PropertyValueFactory property="name" />
 									</cellValueFactory>
 								</TableColumn>
-								<TableColumn prefWidth="203.0"
-									styleClass="alignRight" text="Unit Price" >
+								<TableColumn prefWidth="203.0" styleClass="alignRight" text="Unit Price">
 									<cellValueFactory>
 										<PropertyValueFactory property="price" />
 									</cellValueFactory>
@@ -93,8 +84,7 @@
 					<children>
 						<HBox styleClass="searchBar">
 							<children>
-								<SVGPath
-									content="M19 11c0-0.547-0.453-1-1-1h-2v-2c0-0.547-0.453-1-1-1s-1 0.453-1 1v2h-2c-0.547 0-1 0.453-1 1s0.453 1 1 1h2v2c0 0.547 0.453 1 1 1s1-0.453 1-1v-2h2c0.547 0 1-0.453 1-1zM10 24c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM24 24c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM26 7v8c0 0.5-0.375 0.938-0.891 1l-16.312 1.906c0.063 0.344 0.203 0.734 0.203 1.094s-0.219 0.688-0.375 1h14.375c0.547 0 1 0.453 1 1s-0.453 1-1 1h-16c-0.547 0-1-0.453-1-1 0-0.484 0.734-1.687 0.953-2.141l-2.766-12.859h-3.187c-0.547 0-1-0.453-1-1s0.453-1 1-1h4c1.062 0 1.078 1.25 1.234 2h18.766c0.547 0 1 0.453 1 1z" />
+								<SVGPath content="M19 11c0-0.547-0.453-1-1-1h-2v-2c0-0.547-0.453-1-1-1s-1 0.453-1 1v2h-2c-0.547 0-1 0.453-1 1s0.453 1 1 1h2v2c0 0.547 0.453 1 1 1s1-0.453 1-1v-2h2c0.547 0 1-0.453 1-1zM10 24c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM24 24c0 1.109-0.891 2-2 2s-2-0.891-2-2 0.891-2 2-2 2 0.891 2 2zM26 7v8c0 0.5-0.375 0.938-0.891 1l-16.312 1.906c0.063 0.344 0.203 0.734 0.203 1.094s-0.219 0.688-0.375 1h14.375c0.547 0 1 0.453 1 1s-0.453 1-1 1h-16c-0.547 0-1-0.453-1-1 0-0.484 0.734-1.687 0.953-2.141l-2.766-12.859h-3.187c-0.547 0-1-0.453-1-1s0.453-1 1-1h4c1.062 0 1.078 1.25 1.234 2h18.766c0.547 0 1 0.453 1 1z" />
 								<HBox styleClass="alignRight" HBox.hgrow="ALWAYS">
 									<children>
 										<Label fx:id="headTotal" styleClass="fs18" text="0" />
@@ -104,25 +94,22 @@
 						</HBox>
 						<TableView fx:id="orders" VBox.vgrow="ALWAYS">
 							<columns>
-								<TableColumn prefWidth="113.0" text="Item" >
+								<TableColumn prefWidth="113.0" text="Item">
 									<cellValueFactory>
 										<PropertyValueFactory property="item" />
 									</cellValueFactory>
 								</TableColumn>
-								<TableColumn maxWidth="80.0" minWidth="80.0"
-									styleClass="alignRight" text="Unit Price" >
+								<TableColumn maxWidth="80.0" minWidth="80.0" styleClass="alignRight" text="Unit Price">
 									<cellValueFactory>
 										<PropertyValueFactory property="price" />
 									</cellValueFactory>
 								</TableColumn>
-								<TableColumn maxWidth="80.0" minWidth="80.0"
-									styleClass="alignRight" text="Count" >
+								<TableColumn fx:id="colCount" maxWidth="80.0" minWidth="80.0" styleClass="alignRight" text="Count">
 									<cellValueFactory>
 										<PropertyValueFactory property="count" />
 									</cellValueFactory>
 								</TableColumn>
-								<TableColumn maxWidth="80.0" minWidth="80.0"
-									styleClass="alignRight" text="Total" >
+								<TableColumn maxWidth="80.0" minWidth="80.0" styleClass="alignRight" text="Total">
 									<cellValueFactory>
 										<PropertyValueFactory property="total" />
 									</cellValueFactory>
@@ -134,38 +121,28 @@
 						</TableView>
 						<GridPane>
 							<columnConstraints>
-								<ColumnConstraints halignment="RIGHT"
-									hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0"
-									prefWidth="240.0" />
-								<ColumnConstraints halignment="RIGHT"
-									hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0"
-									prefWidth="158.0" />
+								<ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="247.0" minWidth="10.0" prefWidth="240.0" />
+								<ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" maxWidth="195.0" minWidth="10.0" prefWidth="158.0" />
 							</columnConstraints>
 							<rowConstraints>
-								<RowConstraints minHeight="30.0"
-									prefHeight="30.0" vgrow="SOMETIMES" />
-								<RowConstraints minHeight="30.0"
-									prefHeight="30.0" vgrow="SOMETIMES" />
-								<RowConstraints minHeight="30.0"
-									prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
+								<RowConstraints minHeight="30.0" prefHeight="30.0" vgrow="SOMETIMES" />
 							</rowConstraints>
 							<children>
 								<Label text="Sub Total" />
 								<Label text="Tax" GridPane.rowIndex="1" />
 								<Label text="Total" GridPane.rowIndex="2" />
 								<Label fx:id="subTotal" text="0" GridPane.columnIndex="1" />
-								<Label fx:id="tax" text="0" GridPane.columnIndex="1"
-									GridPane.rowIndex="1" />
-								<Label fx:id="total" text="0" GridPane.columnIndex="1"
-									GridPane.rowIndex="2" />
+								<Label fx:id="tax" text="0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+								<Label fx:id="total" text="0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 							</children>
 						</GridPane>
 						<HBox styleClass="space10">
 							<children>
 								<VBox onMouseClicked="#delete">
 									<children>
-										<SVGPath
-											content="M20.281 20.656c0 0.391-0.156 0.781-0.438 1.062l-2.125 2.125c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-4.594-4.594-4.594 4.594c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-2.125-2.125c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l4.594-4.594-4.594-4.594c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l2.125-2.125c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l4.594 4.594 4.594-4.594c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l2.125 2.125c0.281 0.281 0.438 0.672 0.438 1.062s-0.156 0.781-0.438 1.062l-4.594 4.594 4.594 4.594c0.281 0.281 0.438 0.672 0.438 1.062z" />
+										<SVGPath content="M20.281 20.656c0 0.391-0.156 0.781-0.438 1.062l-2.125 2.125c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-4.594-4.594-4.594 4.594c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-2.125-2.125c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l4.594-4.594-4.594-4.594c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l2.125-2.125c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l4.594 4.594 4.594-4.594c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l2.125 2.125c0.281 0.281 0.438 0.672 0.438 1.062s-0.156 0.781-0.438 1.062l-4.594 4.594 4.594 4.594c0.281 0.281 0.438 0.672 0.438 1.062z" />
 										<Label text="Delete" />
 									</children>
 									<styleClass>
@@ -176,8 +153,7 @@
 								</VBox>
 								<VBox layoutX="10.0" layoutY="10.0" onMouseClicked="#clear">
 									<children>
-										<SVGPath
-											content="M23.609 16.5c0 0.031 0 0.078-0.016 0.109-1.328 5.531-5.891 9.391-11.656 9.391-3.047 0-6-1.203-8.219-3.313l-2.016 2.016c-0.187 0.187-0.438 0.297-0.703 0.297-0.547 0-1-0.453-1-1v-7c0-0.547 0.453-1 1-1h7c0.547 0 1 0.453 1 1 0 0.266-0.109 0.516-0.297 0.703l-2.141 2.141c1.469 1.375 3.422 2.156 5.437 2.156 2.781 0 5.359-1.437 6.813-3.813 0.375-0.609 0.562-1.203 0.828-1.828 0.078-0.219 0.234-0.359 0.469-0.359h3c0.281 0 0.5 0.234 0.5 0.5zM24 4v7c0 0.547-0.453 1-1 1h-7c-0.547 0-1-0.453-1-1 0-0.266 0.109-0.516 0.297-0.703l2.156-2.156c-1.484-1.375-3.437-2.141-5.453-2.141-2.781 0-5.359 1.437-6.813 3.813-0.375 0.609-0.562 1.203-0.828 1.828-0.078 0.219-0.234 0.359-0.469 0.359h-3.109c-0.281 0-0.5-0.234-0.5-0.5v-0.109c1.344-5.547 5.953-9.391 11.719-9.391 3.063 0 6.047 1.219 8.266 3.313l2.031-2.016c0.187-0.187 0.438-0.297 0.703-0.297 0.547 0 1 0.453 1 1z" />
+										<SVGPath content="M23.609 16.5c0 0.031 0 0.078-0.016 0.109-1.328 5.531-5.891 9.391-11.656 9.391-3.047 0-6-1.203-8.219-3.313l-2.016 2.016c-0.187 0.187-0.438 0.297-0.703 0.297-0.547 0-1-0.453-1-1v-7c0-0.547 0.453-1 1-1h7c0.547 0 1 0.453 1 1 0 0.266-0.109 0.516-0.297 0.703l-2.141 2.141c1.469 1.375 3.422 2.156 5.437 2.156 2.781 0 5.359-1.437 6.813-3.813 0.375-0.609 0.562-1.203 0.828-1.828 0.078-0.219 0.234-0.359 0.469-0.359h3c0.281 0 0.5 0.234 0.5 0.5zM24 4v7c0 0.547-0.453 1-1 1h-7c-0.547 0-1-0.453-1-1 0-0.266 0.109-0.516 0.297-0.703l2.156-2.156c-1.484-1.375-3.437-2.141-5.453-2.141-2.781 0-5.359 1.437-6.813 3.813-0.375 0.609-0.562 1.203-0.828 1.828-0.078 0.219-0.234 0.359-0.469 0.359h-3.109c-0.281 0-0.5-0.234-0.5-0.5v-0.109c1.344-5.547 5.953-9.391 11.719-9.391 3.063 0 6.047 1.219 8.266 3.313l2.031-2.016c0.187-0.187 0.438-0.297 0.703-0.297 0.547 0 1 0.453 1 1z" />
 										<Label text="Clear" />
 									</children>
 									<styleClass>
@@ -188,9 +164,7 @@
 								</VBox>
 								<VBox layoutX="50.0" layoutY="10.0" onMouseClicked="#paid">
 									<children>
-										<SVGPath
-											content="M26.109 8.844c0 0.391-0.156 0.781-0.438 1.062l-13.438 13.438c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-7.781-7.781c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l2.125-2.125c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l4.594 4.609 10.25-10.266c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l2.125 2.125c0.281 0.281 0.438 0.672 0.438 1.062z"
-											styleClass="white" />
+										<SVGPath content="M26.109 8.844c0 0.391-0.156 0.781-0.438 1.062l-13.438 13.438c-0.281 0.281-0.672 0.438-1.062 0.438s-0.781-0.156-1.062-0.438l-7.781-7.781c-0.281-0.281-0.438-0.672-0.438-1.062s0.156-0.781 0.438-1.062l2.125-2.125c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l4.594 4.609 10.25-10.266c0.281-0.281 0.672-0.438 1.062-0.438s0.781 0.156 1.062 0.438l2.125 2.125c0.281 0.281 0.438 0.672 0.438 1.062z" styleClass="white" />
 										<Label styleClass="white" text="Paid" />
 									</children>
 									<styleClass>

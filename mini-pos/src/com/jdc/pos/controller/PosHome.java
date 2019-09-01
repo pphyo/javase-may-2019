@@ -60,7 +60,8 @@ public class PosHome implements Initializable{
 	}
 	
 	public void showReport() {
-		// TODO
+		content.getChildren().clear();
+		content.getChildren().add(getView("SaleReport"));
 	}
 	
 	public void switchView() {
