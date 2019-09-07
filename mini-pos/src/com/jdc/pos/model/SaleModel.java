@@ -7,11 +7,10 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.TreeMap;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -129,5 +128,18 @@ public class SaleModel {
 		
 		return result;
 	}
+
+	public Map<String, Map<String, Integer>> getDailySales(String category, LocalDate from, LocalDate to) {
+		
+		LocalDate target = from;
+		
+		while(target.compareTo(to) <= 0) {
+			
+			target = target.plusDays(1);
+		}
+		
+		return null;
+	}
+
 	
 }

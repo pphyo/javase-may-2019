@@ -9,10 +9,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.SVGPath?>
 
 
 <HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.pos.controller.SaleReport">
@@ -23,6 +21,14 @@
    <children>
       <VBox prefHeight="200.0" prefWidth="100.0" styleClass="space10" HBox.hgrow="ALWAYS">
          <children>
+            <BarChart fx:id="barChart" title="Daily Report" VBox.vgrow="ALWAYS">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </BarChart>
             <HBox>
                <children>
                   <ComboBox fx:id="category" prefWidth="150.0" promptText="Category" HBox.hgrow="ALWAYS" />
@@ -34,107 +40,6 @@
                   <String fx:value="searchBar" />
                   <String fx:value="space10" />
                </styleClass>
-            </HBox>
-            <BarChart fx:id="barChart" title="Daily Report" VBox.vgrow="ALWAYS">
-              <xAxis>
-                <CategoryAxis side="BOTTOM" />
-              </xAxis>
-              <yAxis>
-                <NumberAxis side="LEFT" />
-              </yAxis>
-            </BarChart>
-            <HBox prefHeight="100.0" prefWidth="200.0" styleClass="space20">
-               <children>
-                  <HBox prefHeight="100.0" prefWidth="200.0" styleClass="p-dark" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox>
-                           <children>
-                              <SVGPath content="M40,60 C42,48 44,30 25,32" />
-                           </children>
-                           <styleClass>
-                              <String fx:value="wid60" />
-                              <String fx:value="alignCenter" />
-                           </styleClass>
-                        </VBox>
-                        <VBox HBox.hgrow="ALWAYS">
-                           <children>
-                              <Label styleClass="fs36" text="5" />
-                              <Label styleClass="fs18" text="Category" />
-                           </children>
-                           <styleClass>
-                              <String fx:value="alignRight" />
-                              <String fx:value="pad20" />
-                           </styleClass>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="s-color" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox>
-                           <children>
-                              <SVGPath content="M40,60 C42,48 44,30 25,32" styleClass="white" />
-                           </children>
-                           <styleClass>
-                              <String fx:value="wid60" />
-                              <String fx:value="alignCenter" />
-                           </styleClass>
-                        </VBox>
-                        <VBox HBox.hgrow="ALWAYS">
-                           <children>
-                              <Label text="5">
-                                 <styleClass>
-                                    <String fx:value="fs36" />
-                                    <String fx:value="white" />
-                                 </styleClass>
-                              </Label>
-                              <Label text="Items">
-                                 <styleClass>
-                                    <String fx:value="fs18" />
-                                    <String fx:value="white" />
-                                 </styleClass>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="alignRight" />
-                              <String fx:value="pad20" />
-                           </styleClass>
-                        </VBox>
-                     </children>
-                  </HBox>
-                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0" styleClass="s-dark" HBox.hgrow="ALWAYS">
-                     <children>
-                        <VBox>
-                           <children>
-                              <SVGPath content="M40,60 C42,48 44,30 25,32" styleClass="white" />
-                           </children>
-                           <styleClass>
-                              <String fx:value="wid60" />
-                              <String fx:value="alignCenter" />
-                           </styleClass>
-                        </VBox>
-                        <VBox HBox.hgrow="ALWAYS">
-                           <children>
-                              <Label text="5">
-                                 <styleClass>
-                                    <String fx:value="fs36" />
-                                    <String fx:value="white" />
-                                 </styleClass>
-                              </Label>
-                              <Label text="Sales">
-                                 <styleClass>
-                                    <String fx:value="fs18" />
-                                    <String fx:value="white" />
-                                 </styleClass>
-                              </Label>
-                           </children>
-                           <styleClass>
-                              <String fx:value="alignRight" />
-                              <String fx:value="pad20" />
-                           </styleClass>
-                        </VBox>
-                     </children>
-                  </HBox>
-               </children>
             </HBox>
          </children>
       </VBox>

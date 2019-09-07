@@ -12,6 +12,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 
@@ -92,8 +94,21 @@ public class SaleReport implements Initializable{
 	}
 
 	private void loadBarChartData() {
-		// TODO Auto-generated method stub
+
+		barChart.getData().clear();
+		Map<String, Map<String, Integer>> data = SaleModel.getInstance().getDailySales(category.getValue(), from.getValue(), to.getValue());
 		
+		data.entrySet().forEach(e -> {
+			Series<String, Integer> series = new Series<>();
+			series.setName(e.getKey());
+			
+			e.getValue().entrySet().stream()
+				.map(d -> new XYChart.Data<>(d.getKey(), d.getValue()))
+				.forEach(series.getData()::add);
+			
+			barChart.getData().add(series);
+			
+		});
 	}
 	
 }
