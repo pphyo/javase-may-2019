@@ -53,12 +53,36 @@
 	-fx-alignment: center-left;
 }
 
+.alignCenter {
+	-fx-alignment: center;
+}
+
 .alignRight {
 	-fx-alignment: center-right;
 }
 
+.wid60 {
+	-fx-pref-width: 60px;
+}
+
+.wid120 {
+	-fx-pref-width: 120px;
+}
+
+.wid380 {
+	-fx-pref-width: 380px;
+}
+
 .wid420 {
 	-fx-pref-width: 420px;
+}
+
+.fs36 {
+	-fx-font-size: 36px;
+}
+
+.fs24 {
+	-fx-font-size: 24px;
 }
 
 .fs18 {

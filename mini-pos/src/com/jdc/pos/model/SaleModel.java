@@ -7,7 +7,11 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.Map.Entry;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -88,6 +92,42 @@ public class SaleModel {
 
 		return list.stream().flatMap(s -> s.getDetails().stream())
 				.filter(pred).collect(Collectors.toList());
+	}
+
+	public Map<String, Integer> getPieData(String category, LocalDate from, LocalDate to) {
+		
+		Map<String, List<SaleDetail>> group = null;
+		
+		Predicate<Sale> filter = a -> true;
+		
+		if(null != from) {
+			filter = filter.and(a -> a.getSaleDate().compareTo(from) >= 0);
+		}
+		
+		if(null != to) {
+			filter = filter.and(a -> a.getSaleDate().compareTo(to) <= 0);
+		}
+		
+		if(null == category) {
+			group = list.stream()
+					.filter(filter)
+					.flatMap(s -> s.getDetails().stream())
+					.collect(Collectors.groupingBy(SaleDetail::getCategory));
+		} else {
+			group = list.stream()
+					.filter(filter)
+					.flatMap(s -> s.getDetails().stream())
+					.filter(s -> s.getCategory().equals(category))
+					.collect(Collectors.groupingBy(SaleDetail::getItem));
+		}
+		
+		Map<String, Integer> result = new TreeMap<>();
+		
+		for(Entry<String, List<SaleDetail>> e : group.entrySet()) {
+			result.put(e.getKey(), e.getValue().stream().mapToInt(a -> a.getTotal()).sum());
+		}
+		
+		return result;
 	}
 	
 }
