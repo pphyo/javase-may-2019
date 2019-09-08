@@ -7,6 +7,7 @@ import java.io.ObjectOutputStream;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -138,7 +139,7 @@ public class SaleModel {
 			target = target.plusDays(1);
 		}
 		
-		return null;
+		return new HashMap<String, Map<String,Integer>>();
 	}
 
 	

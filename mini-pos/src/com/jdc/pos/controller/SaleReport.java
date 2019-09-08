@@ -71,14 +71,8 @@ public class SaleReport implements Initializable{
 			
 			loadBarChartData();
 			
-			loadSammaryData();
 		}
 
-	}
-
-	private void loadSammaryData() {
-		// TODO Auto-generated method stub
-		
 	}
 
 	private void loadPieChartData() {
